@@ -1,0 +1,12 @@
+body{
+	font-size: 10px;
+}
+#one{
+	font-family: 'IM Fell Great Primer SC', serif;
+	font-size: 3.0em;
+}
+#two{
+	font-family: 'Roboto', sans-serif;
+	font-size: 4.0em;
+	text-align:center;
+}

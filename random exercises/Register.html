@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Register</h1>
+<form>
+	
+		<label for = "first">First Name:</label>
+		<input id ="first" type = "text" required placeholder="John"></label>
+		<label for = "last">Last Name:</label>
+		<input id = "last" type = "text" required placeholder="Smith"></label>
+	<div>
+		<label for = "male">Male</label>
+		<input type = "radio" id = "male" name ="gender">
+		<label for = "female">Female</label>
+		<input type = "radio" id = "female" name ="gender">
+		<label for = "other">Other</label>
+		<input type = "radio" id = "other" name ="gender">
+	</div>	
+		<label>Email: <input type = "email" placeholder = "your email"required></label>
+		<label>Password: <input type = "Password" placeholder="password" pattern =".{5,10}" required title = "password must be between 5 to 10 characters">
+	<div>
+		<label>
+		Birthday   Day:
+		<select name = "month">
+			<option selected disabled>Day</option>
+			<option>1</option>
+			<option>2</option>
+		</select>
+		
+		<select name = "day" >
+			<option>1</option>
+			<option>2</option>
+		</select>
+		
+		<select name = "year" >
+			<option selected disabled>Year</option>
+			<option>1</option>
+			<option>2</option>
+		</select>
+	</label>
+	</div>
+	<div>
+	<label for = "terms">I agree to terms and conditions</label>
+	<input id ="terms" name = "agreed" type = "checkbox">
+	<div>
+	<button type = "submit">GO</button>
+	</div>
+</form>
+</body>
+</html>

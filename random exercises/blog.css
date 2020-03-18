@@ -1,0 +1,23 @@
+body{
+	margin: 3% auto;
+	border: #bdc3c7 solid 20px;
+	padding: 0 3%;
+	max-width: 700px;
+	width: 80%;
+}
+h2 + p {
+	border-left: solid #bdc3c7 2px;
+	padding-left: 4px;
+}
+h4{
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #3498db;
+}
+
+h2{
+	color: #2c3e50;
+}
+hr{
+	border-top: solid gray 2px;
+}
