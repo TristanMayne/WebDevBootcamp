@@ -1,6 +1,2 @@
-# starting to use Github
-welcome
-This is my second commit
-## This is my work
-ajshdjakshda
-sajhdajsk
+# This is a Repository to track my BootCamp Progress
+Useful for me as a reference to my past work in Web Technology
