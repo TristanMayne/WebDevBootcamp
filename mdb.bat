@@ -1,6 +1,9 @@
 cd .. 
 cd .. 
 cd .. 
-cd MongoDB/bin
+cd ..
+cd .. 
+cd "Program Files"
+cd MongoDB/Server/4.2/bin
 start mongod
 start mongo

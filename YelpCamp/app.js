@@ -8,17 +8,24 @@ var Campground = require("./models/campground");
 var Comment = require("./models/comment");
 var seedDB = require("./seeds");
 var User = require("./models/user");
+var methodOverride = require("method-override");
 
 var commentRoutes = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds.js");
-var authRoutes = require("./routes/index");
+var indexRoutes = require("./routes/index");
+
+
 // seedDB();
 
 mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser : true, useUnifiedTopology: true });
+mongoose.set('useFindAndModify', false);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static(__dirname + "/public"))
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+
+
 //PASSPORT CONFIG
 app.use(require("express-session")({
     secret: "ellie is still cute",
@@ -36,10 +43,10 @@ app.use(function(req,res, next){
     res.locals.currentUser = req.user;
     next();
 });
-
-app.use(campgroundRoutes);
-app.use(commentRoutes);
-app.use(authRoutes);
+//Requiring routes
+app.use("/campgrounds", campgroundRoutes);
+app.use("/campgrounds/:id/comments",commentRoutes);
+app.use(indexRoutes);
 
 app.listen(3000, process.env.IP, function(){
     console.log("yelpcamp server started");
