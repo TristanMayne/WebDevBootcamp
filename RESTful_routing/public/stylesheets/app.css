@@ -8,3 +8,9 @@ i.icon{
 #delete{
     display: inline
 }
+
+iframe{
+    display:block;
+    margin: 0 auto; 
+    width: 100%;
+}

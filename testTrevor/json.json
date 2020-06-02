@@ -1,0 +1,14 @@
+{
+    "Collection": {
+        "1" :{
+            "type": "blue",
+            "title": "one"
+        },
+        "2":{
+            "type": "green",
+            "title":"two"
+        }
+
+
+    }
+}   

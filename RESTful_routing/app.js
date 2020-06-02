@@ -21,7 +21,7 @@ var blogSchema = new mongoose.Schema({
 });
 
 var Blog = mongoose.model("Blog", blogSchema);
-
+var dimg = "https://www.3dcontentcentral.com/external-site-embed.aspx?format=3D&catalogid=171&modelid=376265&width=250&height=250&edraw=true";
 //ROUTES
 app.get("/", function(req, res){
     res.redirect("/blogs");
@@ -32,7 +32,7 @@ app.get("/blogs", function(req, res){
         if(err){
             console.log("error");
         }else{
-            res.render("index", {blogs:blogs});
+            res.render("index", {blogs:blogs, dimg:dimg});
         }
     });
 });
@@ -53,7 +53,7 @@ app.post("/blogs", function(req, res){
         if (err){
             res.render("new");
         } else{
-            res.redirect("/blogs")
+            res.redirect("/blogs");
         }
     })
 });
@@ -63,7 +63,7 @@ app.get("/blogs/:id", function(req,res){
         if(err){
             res.redirect("/blogs");
         }else{
-            res.render("show", {blog:foundBlog});
+            res.render("show", {blog:foundBlog, dimg:dimg});
         }
     })
 })
