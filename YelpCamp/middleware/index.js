@@ -1,5 +1,6 @@
 
-
+var Campground = require("../models/campground");
+var Comment = require("../models/comment")
 var middlewareObj = {};
 
 middlewareObj.checkCommentOwnership = function(req, res, next){
@@ -31,6 +32,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
                 if (foundCampground.author.id.equals(req.user._id)){
                     next();
                 } else { 
+                    req.flash("error", "You do not have permission to edit the Campground")
                     res.redirect("back");
                 }
             }
@@ -45,6 +47,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
     if (req.isAuthenticated()){
         return next();
     } else {
+        req.flash("error", "Please Login First!")
         res.redirect("/login");
     };
 };
